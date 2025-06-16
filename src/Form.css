@@ -1,6 +1,7 @@
 .form-container {
     width: 100%;
 }
+
 .form {
     gap: 1em;
     padding: 2em;
@@ -10,6 +11,7 @@
     border-radius: .5em;
     box-shadow: 0 2px 6px 6px rgba(255, 255, 255, 0.3);
 }
+
 .name, .email, .phone, .age, .checkbox, .salary {
     justify-content: space-between;
     gap: .5em;
@@ -17,12 +19,39 @@
     font-size: 1.2em;
     font-weight: bold;
 }
+
 input, select {
     padding: .5em;
     border-radius: .5em;
     border: .1em solid #0f1620;
     font-size: 1em;
 }
+
+input:focus, select:focus {
+    border-color: #007BFF;
+    outline: none; 
+}
+
+.checkbox input[type="checkbox"] {
+    width: 1.2em;
+    height: 1.2em;
+    accent-color: #007BFF; /* Changes checkbox color in modern browsers */
+    cursor: pointer;
+    border: 2px solid #0f1620;
+    border-radius: 0.2em;
+}
+
+.checkbox input[type="checkbox"]:hover {
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+}
+
+.checkbox input[type="checkbox"]:focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 2px;
+}
+
+
+
 .btn {
     color: #fff;
     background: #0f1620;
@@ -33,16 +62,19 @@ input, select {
     border-radius: .5em;
     cursor: pointer;
 }
+
 .btn:hover {
     background: #1a1f2a;
     transition: background 0.3s ease;
 }
+
 .model {
     position: absolute;
     width: 50vw;
     height: 100vh;
     background-color: #0f162078;
 }
+
 .model-content {
     width: 60%;
     background-color: #fff;
