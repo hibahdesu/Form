@@ -4,8 +4,8 @@ import './Form.css';
 
 export default function Form() {
     return (
-        <div className='flex center form-container '>
-            <form action="" className='flex column form'>
+        <div className='flex form-container '>
+            <form action="" className='flex center column form'>
                 <h1>Form</h1>
                 <div className="flex name">
                     <label htmlFor="">Name:</label>
@@ -40,7 +40,7 @@ export default function Form() {
                     </select>
                 </div>
 
-                <button>Submit</button>
+                <button className='btn'>Submit</button>
             </form>
         </div>
     )
