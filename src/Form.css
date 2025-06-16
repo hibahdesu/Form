@@ -1,0 +1,20 @@
+.form-container {
+    width: 60%;
+    justify-content: center;
+    padding: 2em;
+    margin: 2em auto;
+    background-color: #729cd6;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.form {
+    flex-direction: column;
+    gap: 1em;
+}
+.name, .email, .phone, .age {
+    justify-content: space-between;
+    gap: .5em;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+}
