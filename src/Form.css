@@ -37,3 +37,16 @@ input, select {
     background: #1a1f2a;
     transition: background 0.3s ease;
 }
+.model {
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    background-color: #0f162078;
+}
+.model-content {
+    width: 60%;
+    background-color: #fff;
+    color: #729cd6;
+    padding: 1em;
+    border-radius: 1em;
+}

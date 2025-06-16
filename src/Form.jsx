@@ -1,10 +1,12 @@
 import './Styles.css';
 import './Form.css';
+import Model from './Model';
+// import { useState } from 'react';
 
 
 export default function Form() {
     return (
-        <div className='flex form-container '>
+        <div className='flex column center form-container '>
             <form action="" className='flex center column form'>
                 <h1>Form</h1>
                 <div className="flex name">
@@ -42,6 +44,7 @@ export default function Form() {
 
                 <button className='btn'>Submit</button>
             </form>
+            <Model />
         </div>
     )
 }
