@@ -4,8 +4,8 @@ import './Form.css';
 
 export default function Form() {
     return (
-        <div className='flex form-container'>
-            <form action="" className='flex form'>
+        <div className='flex center form-container '>
+            <form action="" className='flex column form'>
                 <h1>Form</h1>
                 <div className="flex name">
                     <label htmlFor="">Name:</label>
@@ -25,6 +25,22 @@ export default function Form() {
                     <label htmlFor="">Age:</label>
                     <input type="number" placeholder="Age" />
                 </div>
+
+                <div className="flex checkbox">
+                    <label htmlFor="">Are you an employee?</label>
+                    <input type="checkbox" />
+                </div>
+
+                <div className="flex salary">
+                    <label htmlFor="">Salary:</label>
+                    <select name="" id="">
+                        <option value="">less than $500</option>
+                        <option value="">between $500 and $2000</option>
+                        <option value="">More than $2000</option>
+                    </select>
+                </div>
+
+                <button>Submit</button>
             </form>
         </div>
     )
