@@ -67,6 +67,12 @@ input:focus, select:focus {
     background: #1a1f2a;
     transition: background 0.3s ease;
 }
+.disabled {
+    background: gray !important;
+    color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+}
 
 .model {
     position: absolute;
