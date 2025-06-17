@@ -1,6 +1,6 @@
 import './Form.css';
 
-export default function Model({isVisible}) {
+export default function Model({isVisible, errorMessage=null}) {
     if (isVisible) {
         return (
             <div className='model flex center'>
