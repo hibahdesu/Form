@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 export default function Form() {
     const [showModel, setShowModel] = useState(false);
+    const [errorMessage, setErrorMessage] = useState(null);
     const [inputs, setInputs] = useState({
         name: '',
         email: '',
@@ -17,6 +18,34 @@ export default function Form() {
     
     function handFormSubmit(e) {
         e.preventDefault();
+        setErrorMessage(null);
+        const { name, email, phone, age, employee, salary } = inputs;
+
+        if (age < 18 || age > 100) {
+            setErrorMessage("Age must be between 18 and 100");
+            setShowModel(true);
+            return;
+        } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+            setErrorMessage("Name must contain only letters and spaces");
+            setShowModel(true);
+            return;
+        } else if (!/^\d{10}$/.test(phone)) {
+            setErrorMessage("Phone number must be 10 digits long");
+            setShowModel(true);
+            return;
+        } else if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email)) {
+            setErrorMessage("Email is not valid");
+            setShowModel(true);
+            return;
+        } else if (salary === "") {
+            setErrorMessage("Salary must be selected");
+            setShowModel(true);
+            return;
+        } else if (employee && salary === "less than $500") {
+            setErrorMessage("If you are an employee, salary cannot be less than $500");
+            setShowModel(true);
+            return;
+        } 
 
         setShowModel(true);
         setTimeout(() => {
@@ -98,7 +127,7 @@ export default function Form() {
 
                 <button className={btnIsDisabled ? "btn disabled" : "btn"} onClick={handFormSubmit} disabled={btnIsDisabled}>Submit</button>
             </form>
-            <Model isVisible={showModel} />
+            <Model isVisible={showModel} errorMessage={errorMessage} />
         </div>
     )
 }
