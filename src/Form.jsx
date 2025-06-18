@@ -4,7 +4,7 @@ import Model from './Model';
 import { useState } from 'react';
 
 
-export default function Form() {
+export default function Form({title}) {
     const [showModel, setShowModel] = useState(false);
     const [errorMessage, setErrorMessage] = useState(null);
     const [inputs, setInputs] = useState({
@@ -74,7 +74,7 @@ export default function Form() {
     return (
         <div className='flex column center form-container ' onClick={handleDivClick}>
             <form action="" className='flex center column form'>
-                <h1>Form</h1>
+                <h1>{title}</h1>
                 <div className="flex name">
                     <label htmlFor="">Name:</label>
                     <input type="text" placeholder="Name" value={inputs.name} onChange={(e) => {
