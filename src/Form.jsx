@@ -99,13 +99,11 @@ export default function Form({title}) {
             <form action="" onSubmit={handFormSubmit} className='flex center column form'>
                 <h1>{title}</h1>
 
-
                 <InputComponent label="Name" type="text" name="name" value={inputs.name} onChange={handleName} />
                 <InputComponent label="Email" type="text" name="email" value={inputs.email} onChange={handleEmail} />
                 <InputComponent label="Phone" type="text" name="phone" value={inputs.phone} onChange={handlePhone} />
                 <InputComponent label="Age" type="number" name="age" value={inputs.age} onChange={handleAge} />
                 <InputComponent label="Are you an employee?" type="checkbox" name="employee" checked={inputs.employee} onChange={(value) => setInputs({ ...inputs, employee: value })} />
-                {/* <InputComponent label="Salary" type="select" name="salary" value={inputs.salary} onChange={(value) => setInputs({ ...inputs, salary: value })} /> */}
 
                 <InputComponent
                     label="Salary"
