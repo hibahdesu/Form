@@ -106,8 +106,8 @@ export default function Form({title}) {
         <div className='flex column center form-container ' onClick={handleDivClick}>
             
             <form action="" onSubmit={handFormSubmit} className='flex center column form'>
-                <h1>{title}</h1>
-                <h2 className='user-name'>Welcome {userContext.name}</h2>
+                <h1>{title} {userContext.name}</h1>
+                {/* <h2 className='user-name'>Welcome {userContext.name}</h2> */}
 
                 <InputComponent label="Name" type="text" name="name" value={inputs.name} onChange={handleName} />
                 <InputComponent label="Email" type="text" name="email" value={inputs.email} onChange={handleEmail} />
