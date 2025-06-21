@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import UserContext from "./contexts/UserContext";
+
+
 export default function InputComponent({ label, type, name, value, onChange, checked, options = [] }) {
+    const userContext = useContext(UserContext);
     return (
         <div className={`flex ${name}`}>
-            <label htmlFor={name}>{label}:</label>
+            <label htmlFor={name}>{userContext.name} {label}:</label>
             {type === 'checkbox' ? (
                 <input
                     type="checkbox"
