@@ -3,14 +3,22 @@ import './Form.css';
 import Model from './Model';
 import { useState } from 'react';
 import InputComponent from './InputComponent';
+import { useContext } from 'react';
+import UserContext from './contexts/UserContext';
 
 
 export default function Form({title}) {
+    const userContext = useContext(UserContext);
+    const initialInputs = {
+        name: userContext.name || '',
+        email: userContext.email || '',
+    };
+    console.log(userContext)
     const [showModel, setShowModel] = useState(false);
     const [errorMessage, setErrorMessage] = useState(null);
     const [inputs, setInputs] = useState({
-        name: '',
-        email: '',
+        name: initialInputs.name,
+        email: initialInputs.email,
         phone: '',
         age: '',
         employee: false,
@@ -96,8 +104,10 @@ export default function Form({title}) {
 
     return (
         <div className='flex column center form-container ' onClick={handleDivClick}>
+            
             <form action="" onSubmit={handFormSubmit} className='flex center column form'>
                 <h1>{title}</h1>
+                <h2 className='user-name'>Welcome {userContext.name}</h2>
 
                 <InputComponent label="Name" type="text" name="name" value={inputs.name} onChange={handleName} />
                 <InputComponent label="Email" type="text" name="email" value={inputs.email} onChange={handleEmail} />
